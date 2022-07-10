@@ -11,8 +11,6 @@ local TP = Instance.new("TextButton")
 local SpeedNormal = Instance.new("TextButton")
 local SpeedFast = Instance.new("TextButton")
 local player = game.Players.LocalPlayer
-local char = player.CharacterAdded:wait()
-local h = char.Humanoid
 
 --Properties:
 
@@ -32,12 +30,11 @@ Top.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
 Top.Position = UDim2.new(0, 0, -0.144508675, 0)
 Top.Size = UDim2.new(0, 488, 0, 50)
 Top.Font = Enum.Font.SourceSans
-Top.Text = "Game Gui by #alfonsop123#3607 (only speed works for now)"
+Top.Text = "Game Gui by #alfonsop123#3607"
 Top.TextColor3 = Color3.fromRGB(0, 0, 0)
 Top.TextScaled = true
 Top.TextSize = 14.000
 Top.TextWrapped = true
-
 InfJump.Name = "InfJump"
 InfJump.Parent = Frame
 InfJump.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
@@ -74,7 +71,7 @@ SpeedNormal.TextScaled = true
 SpeedNormal.TextSize = 14.000
 SpeedNormal.TextWrapped = true
 SpeedNormal.MouseButton1Down:connect(function()
-	h.WalkSpeed = 16
+	--h.WalkSpeed = 16
 end)
 
 SpeedFast.Name = "SpeedFast"
@@ -89,5 +86,5 @@ SpeedFast.TextScaled = true
 SpeedFast.TextSize = 14.000
 SpeedFast.TextWrapped = true
 SpeedFast.MouseButton1Down:connect(function()
-	h.WalkSpeed = 50
+	--h.WalkSpeed = 50
 end)
