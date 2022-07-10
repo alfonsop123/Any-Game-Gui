@@ -6,12 +6,13 @@
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local Top = Instance.new("TextLabel")
-local InfJump = Instance.new("TextButton")
+local NoClip = Instance.new("TextButton")
 local TP = Instance.new("TextButton")
 local SpeedNormal = Instance.new("TextButton")
 local SpeedFast = Instance.new("TextButton")
-local player = game.Players.LocalPlayer
+local InfJump = Instance.new("TextButton")
 local InfiniteJumpEnabled = true
+local player = game.Players.LocalPlayer
 
 --Properties:
 
@@ -36,24 +37,19 @@ Top.TextColor3 = Color3.fromRGB(0, 0, 0)
 Top.TextScaled = true
 Top.TextSize = 14.000
 Top.TextWrapped = true
-InfJump.Name = "InfJump"
-InfJump.Parent = Frame
-InfJump.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
-InfJump.Position = UDim2.new(0, 0, 0.0606936403, 0)
-InfJump.Size = UDim2.new(0, 156, 0, 50)
-InfJump.Font = Enum.Font.SourceSans
-InfJump.Text = "Inf Jump"
-InfJump.TextColor3 = Color3.fromRGB(0, 0, 0)
-InfJump.TextScaled = true
-InfJump.TextSize = 14.000
-InfJump.TextWrapped = true
-InfJump.MouseButton1Down:connect(function()
-	game:GetService("UserInputService").JumpRequest:connect(function()
-		if InfiniteJumpEnabled then
-			game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-		end
-	end)
-end)
+
+NoClip.Name = "No Clip"
+NoClip.Parent = Frame
+NoClip.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
+NoClip.Position = UDim2.new(0, 0, 0.505780339, 0)
+NoClip.Size = UDim2.new(0, 156, 0, 50)
+NoClip.Font = Enum.Font.SourceSans
+NoClip.Text = "No Clip"
+NoClip.TextColor3 = Color3.fromRGB(0, 0, 0)
+NoClip.TextScaled = true
+NoClip.TextSize = 14.000
+NoClip.TextWrapped = true
+
 
 TP.Name = "TP"
 TP.Parent = Frame
@@ -79,6 +75,7 @@ TP.MouseButton1Down:connect(function()
 	tool.Parent = game.Players.LocalPlayer.Backpack
 
 end)
+
 
 SpeedNormal.Name = "SpeedNormal"
 SpeedNormal.Parent = Frame
@@ -108,4 +105,24 @@ SpeedFast.TextSize = 14.000
 SpeedFast.TextWrapped = true
 SpeedFast.MouseButton1Down:connect(function()
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+end)
+
+
+InfJump.Name = "InfJump"
+InfJump.Parent = Frame
+InfJump.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
+InfJump.Position = UDim2.new(0, 0, 0.0606936514, 0)
+InfJump.Size = UDim2.new(0, 156, 0, 50)
+InfJump.Font = Enum.Font.SourceSans
+InfJump.Text = "Inf Jump"
+InfJump.TextColor3 = Color3.fromRGB(0, 0, 0)
+InfJump.TextScaled = true
+InfJump.TextSize = 14.000
+InfJump.TextWrapped = true
+InfJump.MouseButton1Down:connect(function()
+	game:GetService("UserInputService").JumpRequest:connect(function()
+		if InfiniteJumpEnabled then
+			game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+		end
+	end)
 end)
