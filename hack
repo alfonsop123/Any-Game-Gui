@@ -11,6 +11,7 @@ local TP = Instance.new("TextButton")
 local SpeedNormal = Instance.new("TextButton")
 local SpeedFast = Instance.new("TextButton")
 local player = game.Players.LocalPlayer
+local InfiniteJumpEnabled = true
 
 --Properties:
 
@@ -46,6 +47,13 @@ InfJump.TextColor3 = Color3.fromRGB(0, 0, 0)
 InfJump.TextScaled = true
 InfJump.TextSize = 14.000
 InfJump.TextWrapped = true
+InfJump.MouseButton1Down:connect(function()
+	game:GetService("UserInputService").JumpRequest:connect(function()
+		if InfiniteJumpEnabled then
+			game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+		end
+	end)
+end)
 
 TP.Name = "TP"
 TP.Parent = Frame
@@ -59,16 +67,16 @@ TP.TextScaled = true
 TP.TextSize = 14.000
 TP.TextWrapped = true
 TP.MouseButton1Down:connect(function()
-mouse = game.Players.LocalPlayer:GetMouse()
-tool = Instance.new("Tool")
-tool.RequiresHandle = false
-tool.Name = "Click Teleport"
-tool.Activated:connect(function()
-local pos = mouse.Hit+Vector3.new(0,2.5,0)
-pos = CFrame.new(pos.X,pos.Y,pos.Z)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
-end)
-tool.Parent = game.Players.LocalPlayer.Backpack
+	mouse = game.Players.LocalPlayer:GetMouse()
+	tool = Instance.new("Tool")
+	tool.RequiresHandle = false
+	tool.Name = "Click Teleport"
+	tool.Activated:connect(function()
+		local pos = mouse.Hit+Vector3.new(0,2.5,0)
+		pos = CFrame.new(pos.X,pos.Y,pos.Z)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+	end)
+	tool.Parent = game.Players.LocalPlayer.Backpack
 
 end)
 
@@ -84,7 +92,7 @@ SpeedNormal.TextScaled = true
 SpeedNormal.TextSize = 14.000
 SpeedNormal.TextWrapped = true
 SpeedNormal.MouseButton1Down:connect(function()
-	--h.WalkSpeed = 16
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
 end)
 
 SpeedFast.Name = "SpeedFast"
@@ -99,5 +107,5 @@ SpeedFast.TextScaled = true
 SpeedFast.TextSize = 14.000
 SpeedFast.TextWrapped = true
 SpeedFast.MouseButton1Down:connect(function()
-	--h.WalkSpeed = 50
+	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
 end)
