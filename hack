@@ -4,6 +4,7 @@
 -- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
 local ScrollingFrame = Instance.new("ScrollingFrame")
 local TeleportAll = Instance.new("TextButton")
 local InfJump = Instance.new("TextButton")
@@ -11,8 +12,8 @@ local NoClip = Instance.new("TextButton")
 local SpeedFast = Instance.new("TextButton")
 local SpeedNormal = Instance.new("TextButton")
 local TP = Instance.new("TextButton")
-local Top = Instance.new("TextLabel")
 local Fly = Instance.new("TextButton")
+local Top = Instance.new("TextLabel")
 local InfiniteJumpEnabled = true
 local player = game.Players.LocalPlayer
 
@@ -21,13 +22,18 @@ local player = game.Players.LocalPlayer
 ScreenGui.Parent = game.CoreGui
 ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-ScrollingFrame.Parent = ScreenGui
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(168, 168, 168)
+Frame.Position = UDim2.new(0.0454895906, 0, 0.0817901269, 0)
+Frame.Size = UDim2.new(0, 627, 0, 500)
+Frame.Active = true
+Frame.Draggable = true
+
+ScrollingFrame.Parent = Frame
 ScrollingFrame.Active = true
 ScrollingFrame.BackgroundColor3 = Color3.fromRGB(131, 131, 131)
-ScrollingFrame.Position = UDim2.new(0.303777963, 0, 0.152777776, 0)
+ScrollingFrame.Position = UDim2.new(-0.000229239464, 0, 0.101349205, 0)
 ScrollingFrame.Size = UDim2.new(0, 627, 0, 449)
-ScrollingFrame.Active = true
-ScrollingFrame.Draggable = true
 
 TeleportAll.Name = "TeleportAll"
 TeleportAll.Parent = ScrollingFrame
@@ -45,7 +51,6 @@ TeleportAll.MouseButton1Down:connect(function()
 		v.Character.HumanoidRootPart.CFrame = player.Character.HumanoidRootPart.CFrame
 	end
 end)
-
 
 InfJump.Name = "InfJump"
 InfJump.Parent = ScrollingFrame
@@ -93,6 +98,7 @@ SpeedFast.MouseButton1Down:connect(function()
 	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
 end)
 
+
 SpeedNormal.Name = "SpeedNormal"
 SpeedNormal.Parent = ScrollingFrame
 SpeedNormal.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
@@ -133,17 +139,6 @@ TP.MouseButton1Down:connect(function()
 
 end)
 
-Top.Name = "Top"
-Top.Parent = ScrollingFrame
-Top.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
-Top.Size = UDim2.new(0, 613, 0, 50)
-Top.Font = Enum.Font.SourceSans
-Top.Text = "Game Gui by #alfonsop123#3607 V0.5 (Currently noclip, fly do not work!)"
-Top.TextColor3 = Color3.fromRGB(0, 0, 0)
-Top.TextScaled = true
-Top.TextSize = 14.000
-Top.TextWrapped = true
-
 Fly.Name = "Fly"
 Fly.Parent = ScrollingFrame
 Fly.BackgroundColor3 = Color3.fromRGB(83, 83, 83)
@@ -155,3 +150,15 @@ Fly.TextColor3 = Color3.fromRGB(0, 0, 0)
 Fly.TextScaled = true
 Fly.TextSize = 14.000
 Fly.TextWrapped = true
+
+Top.Name = "Top"
+Top.Parent = Frame
+Top.BackgroundColor3 = Color3.fromRGB(152, 152, 152)
+Top.BackgroundTransparency = 1.000
+Top.Size = UDim2.new(0, 613, 0, 50)
+Top.Font = Enum.Font.SourceSans
+Top.Text = "Game Gui by #alfonsop123#3607 V0.6 (Currently noclip, fly do not work!)"
+Top.TextColor3 = Color3.fromRGB(0, 0, 0)
+Top.TextScaled = true
+Top.TextSize = 14.000
+Top.TextWrapped = true
