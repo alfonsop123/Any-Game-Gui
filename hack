@@ -1,6 +1,16 @@
 -- Gui to Lua
 -- Version: 3.2
-
+setclipboard("https://discord.gg/4WkkxqK6fK")
+game.StarterGui:SetCore("SendNotification", {
+	Title = "Get Key In Discord";
+	Text = "Discord Invite Copied To Clipboard!"; -- what the text says (ofc)
+	Duration = 30;
+})
+game.StarterGui:SetCore("SendNotification", {
+	Title = "Advertisement";
+	Text = "Subscribe To Alf's Scripts On YT For More Scripts!"; -- what the text says (ofc)
+	Duration = 30;
+})
 -- Instances:
 
 local ScreenGui = Instance.new("ScreenGui")
@@ -243,9 +253,9 @@ local function RSEVS_fake_script() -- TextButton.LocalScript
 	--local key = "170709"
 	script.Parent.Parent.KeyInput.Text = "Enter Key Here"
 	script.Parent.MouseButton1Click:Connect(function()
-		local KeyInput = tonumber(script.Parent.Parent.KeyInput.Text)
-		--local KeyInput = script.Parent.Parent.KeyInput.Text
-		if KeyInput ~= "170709" then
+		--local KeyInput = tonumber(script.Parent.Parent.KeyInput.Text)
+		local KeyInput = script.Parent.Parent.KeyInput.Text
+		if KeyInput == "170709" then
 			script.Parent.Parent.KeyInput.Text = "Success!"
 			wait(2.5)
 			HackFrame.Visible = true
