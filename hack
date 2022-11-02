@@ -8,7 +8,7 @@ game.StarterGui:SetCore("SendNotification", {
 })
 game.StarterGui:SetCore("SendNotification", {
 	Title = "Advertisement";
-	Text = "Subscribe To Alf's Scripts On YT For More Scripts!"; -- what the text says (ofc)
+	Text = "Subscribe To Alf's Scripts On YT For More Scripts! (youtube.com/@alfs-scripts)"; -- what the text says (ofc)
 	Duration = 30;
 })
 -- Instances:
